@@ -1,11 +1,7 @@
 import enums.Department;
 import enums.Grade;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-public class Employee {
+public class Employee implements Comparable<Employee> {
     private String id;
     private String name;
     private String surname;
@@ -14,6 +10,7 @@ public class Employee {
     private double salary;
     private double bonusPCT;
     private boolean hasPlanBeenCompleted;
+
     public Employee(
             String id,
             String name,
@@ -46,5 +43,75 @@ public class Employee {
                 ", bonusPCT=" + bonusPCT +
                 ", hasPlanBeenCompleted=" + hasPlanBeenCompleted +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return (int) (this.salary - (o.salary));
+    }
+
+    // был баг  с lombok пришлось вручную написать Getter и Setter
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public Grade getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Grade grade) {
+        this.grade = grade;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public double getBonusPCT() {
+        return bonusPCT;
+    }
+
+    public void setBonusPCT(double bonusPCT) {
+        this.bonusPCT = bonusPCT;
+    }
+
+    public boolean isHasPlanBeenCompleted() {
+        return hasPlanBeenCompleted;
+    }
+
+    public void setHasPlanBeenCompleted(boolean hasPlanBeenCompleted) {
+        this.hasPlanBeenCompleted = hasPlanBeenCompleted;
     }
 }
