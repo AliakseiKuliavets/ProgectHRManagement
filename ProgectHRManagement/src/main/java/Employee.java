@@ -1,6 +1,8 @@
 import enums.Department;
 import enums.Grade;
 
+import java.util.Objects;
+
 public class Employee implements Comparable<Employee> {
     private String id;
     private String name;
@@ -46,8 +48,21 @@ public class Employee implements Comparable<Employee> {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Double.compare(employee.salary, salary) == 0 && Objects.equals(name, employee.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, salary);
+    }
+
+    @Override
     public int compareTo(Employee o) {
-        return (int) (this.salary - (o.salary));
+        return this.name.compareTo(o.name);
     }
 
     // был баг  с lombok пришлось вручную написать Getter и Setter

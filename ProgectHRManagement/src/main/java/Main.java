@@ -5,19 +5,19 @@ public class Main {
         //создаем 40 сотрудников
 
 //        // вывод 40 сотрудников
-//        System.out.println(serviceCollection.getEmployees());
-//        // сортировка по имени
-//        serviceCollection.showEverythingSortedByName();
-//        // вывод 40 сотрудников после сортировки
-//        System.out.println(serviceCollection.getEmployees());
+        System.out.println(serviceCollection.getEmployees());
+        // сортировка по имени
+        serviceCollection.showEverythingSortedByName();
+        // вывод 40 сотрудников после сортировки
+        System.out.println(serviceCollection.getEmployees());
 
         System.out.println("--------------------------------------------");
         // вывод 40 сотрудников
-//        System.out.println(serviceCollection.getEmployees());
-//        // сортировка по зарплатам
-//        serviceCollection.showEverythingSortedBySalary();
-//        // вывод 40 сотрудников после сортировки
-//        System.out.println(serviceCollection.getEmployees());
+        System.out.println(serviceCollection.getEmployees());
+        // сортировка по зарплатам
+        serviceCollection.showEverythingSortedBySalary();
+        // вывод 40 сотрудников после сортировки
+        System.out.println(serviceCollection.getEmployees());
 
         System.out.println("--------------------------------------------");
 //        //показать имя, фамилию, департамент и грейд
